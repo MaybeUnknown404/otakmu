@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+  --otaku-red: #8c0000;
+  --otaku-red-hover: #b30000;
+  --otaku-bg-dark: #121212;
+  --otaku-bg-card: #1e1e1e;
+  --otaku-bg-sidebar: #1a1a1a;
+  --otaku-border: #2d2d2d;
+  --otaku-text-white: #ffffff;
+  --otaku-text-gray: #b0b0b0;
+  --otaku-text-muted: #888888;
+  --otaku-accent-yellow: #ffc107;
+  --otaku-accent-blue: #0088cc;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--otaku-bg-dark);
+  color: var(--otaku-text-white);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Scrollbar Custom */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--otaku-red);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--otaku-red-hover);
+}
+
+/* Top Header Bar */
+.top-header {
+  background-color: #000000;
+  border-bottom: 2px solid var(--otaku-red);
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo-badge {
+  background: var(--otaku-red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  color: var(--otaku-accent-yellow);
+  font-weight: 500;
+}
+
+/* Top Search Form */
+.top-search-form {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  border: 1px solid var(--otaku-border);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 380px;
+  width: 100%;
+}
+
+.top-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.top-search-btn {
+  background: var(--otaku-red);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.top-search-btn:hover {
+  background: var(--otaku-red-hover);
+}
+
+/* Main Navigation Red Bar */
+.main-nav {
+  background-color: var(--otaku-red);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.85rem 1.25rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: #660000;
+}
+
+/* Main Layout Wrapper (2 Columns) */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Box & Headers */
+.box-section {
+  background: var(--otaku-bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--otaku-border);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.box-header {
+  background: var(--otaku-red);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #550000;
+}
+
+.box-body {
+  padding: 1.25rem;
+}
+
+/* Anime Post Cards Grid (.detpost) */
+.anime-post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.detpost {
+  background: #141414;
+  border: 1px solid var(--otaku-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.detpost:hover {
+  transform: translateY(-5px);
+  border-color: var(--otaku-red);
+  box-shadow: 0 8px 20px rgba(140, 0, 0, 0.3);
+}
+
+.thumb-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 140%;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.thumb-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.detpost:hover .thumb-wrap img {
+  transform: scale(1.06);
+}
+
+/* Overlay Badges */
+.badge-epz {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(140, 0, 0, 0.9);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-bottom-right-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.badge-rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--otaku-accent-yellow);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-bottom-left-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.badge-date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ddd;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.post-title {
+  padding: 0.75rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.detpost:hover .post-title {
+  color: var(--otaku-accent-yellow);
+}
+
+/* A-Z Letter Filter Bar */
+.alphabet-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  background: #141414;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--otaku-border);
+}
+
+.letter-btn {
+  background: #262626;
+  color: #fff;
+  border: 1px solid var(--otaku-border);
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.letter-btn:hover, .letter-btn.active {
+  background: var(--otaku-red);
+  border-color: var(--otaku-red);
+}
+
+/* Anime List Items (A-Z) */
+.az-group-block {
+  margin-bottom: 1.5rem;
+}
+
+.az-letter-header {
+  background: #252525;
+  color: var(--otaku-accent-yellow);
+  padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-left: 4px solid var(--otaku-red);
+  margin-bottom: 0.75rem;
+}
+
+.az-anime-ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.az-anime-li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.az-anime-li a:hover {
+  color: var(--otaku-accent-yellow);
+  text-decoration: underline;
+}
+
+/* Schedule Page Layout */
+.schedule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.schedule-day-card {
+  background: #181818;
+  border: 1px solid var(--otaku-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.schedule-day-title {
+  background: var(--otaku-red);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.schedule-anime-ul {
+  list-style: none;
+  padding: 0.75rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.6rem 1rem;
+}
+
+.schedule-anime-li a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.schedule-anime-li a:hover {
+  color: var(--otaku-accent-yellow);
+}
+
+.schedule-anime-li a::before {
+  content: "▶";
+  font-size: 0.75rem;
+  color: var(--otaku-red);
+}
+
+/* Sidebar Styling */
+.sidebar-box {
+  background: var(--otaku-bg-card);
+  border: 1px solid var(--otaku-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  background: var(--otaku-red);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.sidebar-body {
+  padding: 1rem;
+}
+
+/* Sidebar Genre Buttons */
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+}
+
+.genre-btn {
+  background: #252525;
+  color: #ccc;
+  border: 1px solid var(--otaku-border);
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.genre-btn:hover {
+  background: var(--otaku-red);
+  color: #fff;
+  border-color: var(--otaku-red);
+}
+
+/* Detail Anime Page Layout */
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-top-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #181818;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--otaku-border);
+}
+
+@media (max-width: 650px) {
+  .detail-top-card {
+    flex-direction: column;
+  }
+}
+
+.detail-poster-img {
+  width: 200px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 2px solid var(--otaku-red);
+  align-self: flex-start;
+}
+
+.detail-info-table {
+  flex: 1;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-info-table td {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.88rem;
+  border-bottom: 1px solid #282828;
+}
+
+.detail-info-table td.info-label {
+  font-weight: 700;
+  color: var(--otaku-accent-yellow);
+  width: 140px;
+}
+
+.synopsis-card {
+  background: #181818;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--otaku-border);
+  line-height: 1.6;
+  font-size: 0.92rem;
+  color: #ddd;
+}
+
+.synopsis-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--otaku-accent-yellow);
+  margin-bottom: 0.5rem;
+}
+
+/* Episode List Table */
+.episode-list-box {
+  background: #181818;
+  border: 1px solid var(--otaku-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.ep-list-header {
+  background: var(--otaku-red);
+  color: #fff;
+  padding: 0.65rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.ep-ul {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.ep-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #282828;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ep-li:hover {
+  background: #252525;
+}
+
+.ep-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ep-li:hover .ep-link {
+  color: var(--otaku-accent-yellow);
+}
+
+.ep-date {
+  font-size: 0.8rem;
+  color: var(--otaku-text-muted);
+}
+
+/* Streaming Video Player & Download Box */
+.player-box {
+  background: #000;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 1rem;
+  border: 1px solid var(--otaku-border);
+}
+
+.player-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mirror-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: #181818;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--otaku-border);
+}
+
+.mirror-btn {
+  background: #282828;
+  color: #fff;
+  border: 1px solid var(--otaku-border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mirror-btn:hover, .mirror-btn.active {
+  background: var(--otaku-red);
+  border-color: var(--otaku-red);
+}
+
+/* Download Section Table */
+.download-card {
+  background: #181818;
+  border: 1px solid var(--otaku-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+
+.download-group {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #282828;
+}
+
+.download-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.dl-q-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--otaku-accent-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.dl-links-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.dl-btn {
+  background: #252525;
+  color: #fff;
+  border: 1px solid var(--otaku-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dl-btn:hover {
+  background: var(--otaku-red);
+  border-color: var(--otaku-red);
+  color: #fff;
+}
+
+/* Utility Back Button */
+.back-navigation-btn {
+  background: #252525;
+  color: #fff;
+  border: 1px solid var(--otaku-border);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.back-navigation-btn:hover {
+  background: var(--otaku-red);
+  border-color: var(--otaku-red);
+}
+
+/* Skeleton Loading Effect */
+.skeleton-box {
+  background: linear-gradient(90deg, #181818 25%, #252525 50%, #181818 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Otakudesu SafeStream - Nonton Streaming & Download Anime Subtitle Indonesia Bebas Iklan Judi & Pop-up">
+  <title>Otakudesu - Nonton Anime Sub Indo Clean Player</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Top Header Bar -->
+  <header class="top-header">
+    <a href="#" class="logo-link" id="logoBtn">
+      <div class="logo-badge">OTAKU</div>
+      <div class="logo-text-wrap">
+        <span class="logo-title">OTAKUDESU</span>
+        <span class="logo-subtitle">Nonton Anime Subtitle Indonesia Bebas Iklan</span>
+      </div>
+    </a>
+
+    <form class="top-search-form" id="searchForm">
+      <input type="text" id="searchInput" class="top-search-input" placeholder="Cari anime..." autocomplete="off" required>
+      <button type="submit" class="top-search-btn">CARI</button>
+    </form>
+  </header>
+
+  <!-- Main Navigation Bar -->
+  <nav class="main-nav">
+    <ul class="nav-container">
+      <li class="nav-item"><a class="nav-link active" id="navHome">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" id="navAnimeList">ANIME LIST</a></li>
+      <li class="nav-item"><a class="nav-link" id="navSchedule">JADWAL RILIS</a></li>
+      <li class="nav-item"><a class="nav-link" id="navOngoing">ON-GOING ANIME</a></li>
+      <li class="nav-item"><a class="nav-link" id="navComplete">COMPLETE ANIME</a></li>
+      <li class="nav-item"><a class="nav-link" id="navGenres">GENRE LIST</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Wrapper (Main Content + Sidebar) -->
+  <div class="page-wrapper">
+    
+    <!-- Main Content Area -->
+    <main class="main-content-area" id="mainContent">
+      <!-- Dynamic Views loaded by app.js -->
+    </main>
+
+    <!-- Sidebar Widget Area -->
+    <aside class="sidebar-area">
+      <!-- Genre List Widget -->
+      <div class="sidebar-box">
+        <div class="sidebar-header">GENRE LIST</div>
+        <div class="sidebar-body">
+          <div class="genre-grid" id="sidebarGenreGrid">
+            <!-- Genre buttons rendered dynamically -->
+            <div class="skeleton-box" style="height: 30px;"></div>
+            <div class="skeleton-box" style="height: 30px;"></div>
+            <div class="skeleton-box" style="height: 30px;"></div>
+            <div class="skeleton-box" style="height: 30px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clean Safe Stream Badge Widget -->
+      <div class="sidebar-box">
+        <div class="sidebar-header">INFORMASI BEBAS IKLAN</div>
+        <div class="sidebar-body" style="font-size: 0.85rem; color: #ccc; line-height: 1.6;">
+          <p style="margin-bottom: 0.5rem;"><strong style="color: var(--otaku-accent-yellow);">🛡️ Clean Player:</strong> Web app ini secara otomatis memfilter seluruh iklan pop-up judi/18+ dari pemutar video dan link download.</p>
+          <p>Update episode terbaru tersinkronisasi langsung secara live dari sumber Otakudesu.</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
